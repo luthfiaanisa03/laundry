@@ -53,10 +53,9 @@ for ($x = 0; $x < count($jenis_pakaian); $x++) {
     $jumlah = mysqli_real_escape_string($koneksi, $jumlah_pakaian[$x]);
     
     if (!empty($jenis)) {
-        mysqli_query($koneksi, "
-            INSERT INTO pakaian (pakaian_id, pakaian_transaksi, pakaian_jenis, pakaian_jumlah)
-            VALUES ('', '$id', '$jenis', '$jumlah')
-        ");
+        mysqli_query($koneksi, "INSERT INTO pakaian (pakaian_id, pakaian_transaksi, pakaian_jenis, pakaian_jumlah) VALUES ('', '$id', '$jenis', '$jumlah')");
+
+        echo "<script>alert('Data Sudah Diubah'); window.location.href='transaksi.php'</script";
     }
 }
 
